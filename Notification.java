@@ -1,23 +1,14 @@
-class Notification extends Purchasing{
+public class Notification extends Purchasing{
     // Attributes
-    String notification_id;
-    String buy_date;
-    //composition โดยการเรียก Attributes ของ Class Customer
-    Customer c;
+    int notification_id;
     
-
+    static String[][] dataPurchase = {{"0","0","0","12","Ter","0871913872","Thapho","Wait","2023-10-10"}};
     // Constructor
-    public Notification(String[] dataPurchasing, String notification_id, String buy_date) {
-        super(dataPurchasing);
-        this.notification_id = notification_id;
-        this.buy_date = buy_date;
+    public Notification(int id) {
+        super(dataPurchase[id]);
+        this.notification_id = Integer.parseInt(dataPurchase[id][0]);
+
     }
 
-    public String displayDetailsCustomer() {
-        return c.customer_id + c.customer_name + c.customer_tel + c.customer_email + c.customer_password + c.level; //ตัวอย่างเรียกใช้ composition
-    }
-
-    public String displayAddress() {
-        return c.customer_address;
-    }
+    
 }
